@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/styles';
-import emailjs from 'emailjs-com';
 
 import Divider from '../components/Divider';
 import BoldLink from '../components/BoldLink';

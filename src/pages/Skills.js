@@ -37,7 +37,7 @@ export default function Skills() {
 				<h2 style={{ textDecoration: 'underline', textUnderlineOffset: '15px' }}>{data.title}</h2>
 				<ul className="mapList">
 					{data.points.map((item) => {
-						if (typeof (item) == 'object') {
+						if (typeof (item) === 'object') {
 							if (item.link) {
 								return <li className={classes.skillEntry}><BoldLink link={item.link}>{item.label}</BoldLink></li>;
 							} else {

@@ -4,13 +4,13 @@ import { Link } from 'react-scroll';
 export default function BoldLink(props) {
   const includesPrefix = () => {
     const prefixes = ["https://", "mailto:"];
-    let doesInclude = false;
-    prefixes.map((prefix) => {
+    for (let index = 0; index < prefixes.length; index++) {
+      const prefix = prefixes[index];
       if (props.link.includes(prefix)) {
-        doesInclude = true;
+        return true;
       }
-    })
-    return doesInclude;
+    }
+    return false;
   }
   return (
     <strong>

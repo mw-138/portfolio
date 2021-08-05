@@ -3,7 +3,6 @@ import { makeStyles } from '@material-ui/styles';
 import { Link } from 'react-scroll';
 
 import Logo from '../assets/images/logos/logo_light.png';
-import BoldLink from './BoldLink';
 
 const useStyles = makeStyles({
 	root: {
@@ -69,6 +68,8 @@ export default function Header() {
 				)
 			case 'img':
 				return <img src={item.img} width={50} height={50} alt="" />
+			default:
+				return <div></div>
 		}
 	}
 	const classes = useStyles();
