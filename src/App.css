@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+:root {
+  --clr-red: #ec2424;
+  --clr-grey1: #202020;
+  --clr-grey2: #101010;
+  --clr-grey3: #e3e3e3;
+  --radius: 0.2rem;
+  --font-primary: Montserrat, sans-serif;
+  --fs-paragraph: 18px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: var(--font-primary);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+html, body {
+  background-image: url(https://wallpaper.dog/large/5558019.jpg);
+  background-size: auto;
+  background-repeat: repeat-y;
+  width: 100%;
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+p {
+  font-size: 1rem;
+}
+
+.bold-link {
+  position: relative;
+  text-decoration: none;
+  color: black;
+}
+
+.bold-link:after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: -5px;
+  transition: 0.2s;
+}
+
+.bold-link:hover:after {
+  width: 100%;
+}
+
+.header-label {
+  position: relative;
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header-label:after {
+  content: "";
+  position: absolute;
+  background-color: white;
+  height: 2px;
+  width: 0;
+  left: 0;
+  bottom: -5px;
+  transition: 0.2s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-label:hover:after {
+  width: 100%;
+}
+
+.mapList {
+  padding: 2rem;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid black;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.roundedBtn {
+  bottom: 0;
+  border-radius: 2rem;
+  background-color: transparent;
+  border: 2px solid black;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 150px;
+  height: 50px;
+  transition: 250ms ease-in-out;
+}
+
+.roundedBtn:hover {
+  background-color: black;
+  color: white;
 }
