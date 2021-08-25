@@ -22,15 +22,26 @@
 }
 
 html, body {
-  background-image: url(https://wallpaper.dog/large/5558019.jpg);
-  background-size: auto;
-  background-repeat: repeat-y;
+  background-image: url(https://media.istockphoto.com/photos/programming-source-code-abstract-background-picture-id1047259374?k=6&m=1047259374&s=612x612&w=0&h=nG_krpdg_SonwCnxIOYShVLEidbLvukG9YrBUsRqVEQ=);
+  background-size: cover;
   width: 100%;
   height: 100%;
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #202020;
 }
 
 p {
@@ -111,4 +122,35 @@ input[type=text], select, textarea {
 .roundedBtn:hover {
   background-color: black;
   color: white;
+}
+
+.project-search-input {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  border: 2px solid #101010;
+  margin-bottom: 10px;
+}
+
+.project-search-input input {
+  display: flex;
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  text-indent: 30px;
+  background-color: white;
+  transition: 150ms ease-in-out;
+  color: black;
+  border: 0px solid #404040;
+}
+
+.project-search-input input:hover {
+  background-color: #dbdbdb;
+}
+
+.project-search-input input:focus {
+  outline: none;
 }
