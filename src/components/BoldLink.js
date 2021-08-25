@@ -17,7 +17,7 @@ export default function BoldLink(props) {
       {includesPrefix() ? (
         <a className="bold-link" href={props.link} target="_blank" rel="noopener noreferrer">{props.children}</a>
       ) : (
-        <Link to={props.link} spy={true} smooth={true}><a className="bold-link">{props.children}</a></Link>
+        <Link to={props.link} spy={true} smooth={true} className="bold-link">{props.children}</Link>
       )}
     </strong>
   )

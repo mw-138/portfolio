@@ -38,8 +38,9 @@ export default function Contact() {
 						label: "LinkedIn",
 						icon: LinkedInBlackLogo
 					}
-				].map((contact) => (
+				].map((contact, index) => (
 					<div
+						key={`contactOption-${index}`}
 						style={{
 							display: 'inline-flex',
 							alignItems: 'center',

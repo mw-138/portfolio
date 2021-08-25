@@ -84,7 +84,10 @@ export default function Header() {
 						{ type: "text", link: "projects", label: "Projects" },
 						{ type: "text", link: "contact", label: "Contact" }
 					].map((item, index) => (
-						<li className={classes.navItem}>
+						<li
+							key={`headerOption-${index}`}
+							className={classes.navItem}
+						>
 							{renderItem(item)}
 						</li>
 					))}

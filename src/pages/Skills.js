@@ -31,20 +31,20 @@ const useStyles = makeStyles({
 export default function Skills() {
 	const classes = useStyles();
 
-	const renderSection = (data) => {
+	const renderSection = (data, index) => {
 		return (
-			<div>
+			<div key={`skillSection-${index}`}>
 				<h2 style={{ textDecoration: 'underline', textUnderlineOffset: '15px' }}>{data.title}</h2>
 				<ul className="mapList">
-					{data.points.map((item) => {
+					{data.points.map((item, mapIndex) => {
 						if (typeof (item) === 'object') {
 							if (item.link) {
-								return <li className={classes.skillEntry}><BoldLink link={item.link}>{item.label}</BoldLink></li>;
+								return <li key={`skillSection-${mapIndex}`} className={classes.skillEntry}><BoldLink link={item.link}>{item.label}</BoldLink></li>;
 							} else {
-								return <li className={classes.skillEntry}>{item.label}</li>;
+								return <li key={`skillSection-${mapIndex}`} className={classes.skillEntry}>{item.label}</li>;
 							}
 						} else {
-							return <li className={classes.skillEntry}>{item}</li>;
+							return <li key={`skillSection-${mapIndex}`} className={classes.skillEntry}>{item}</li>;
 						}
 					})}
 				</ul>
@@ -61,42 +61,45 @@ export default function Skills() {
 					{
 						title: "Languages",
 						points: [
+							"C++",
 							"C#",
 							"JavaScript",
 							"TypeScript",
-							"Lua",
 							"HTML",
-							"CSS"
+							"CSS",
+							"Lua",
 						]
 					},
 					{
 						title: "Engines / Frameworks",
 						points: [
-							{ label: "Unity", link: "https://unity.com/" },
 							{ label: "Unreal Engine", link: "https://www.unrealengine.com/en-US/" },
-							{ label: "Monogame", link: "https://www.monogame.net/" },
+							{ label: "Unity", link: "https://unity.com/" },
 							{ label: "React", link: "https://reactjs.org/" },
+							{ label: "Monogame", link: "https://www.monogame.net/" },
 						]
 					},
 					{
 						title: "Tools",
 						points: [
+							{ label: "Adobe Photoshop", link: "https://www.adobe.com/uk/products/photoshop.html" },
 							{ label: "Trello", link: "https://trello.com/en-GB" },
 							{ label: "GitHub", link: "https://github.com/" },
-							{ label: "Adobe Photoshop", link: "https://www.adobe.com/uk/products/photoshop.html" }
+							{ label: "Visual Studio", link: "https://visualstudio.microsoft.com/" },
 						]
 					},
 					{
 						title: "Fields",
 						points: [
-							"Procedural Generation",
+							// "Procedural Generation",
 							"Gameplay",
 							// "Tools",
 							"Scripting"
 						]
 					}
-				].map((item) => (
+				].map((item, index) => (
 					<div
+						key={`skillOption-${index}`}
 						style={{
 							flex: 1,
 							minHeight: '100px',
@@ -105,7 +108,7 @@ export default function Skills() {
 							position: 'relative'
 						}}
 					>
-						{renderSection(item)}
+						{renderSection(item, index)}
 					</div>
 				))}
 			</div>

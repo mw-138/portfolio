@@ -106,8 +106,9 @@ export default function Projects() {
 						img: CLSThumbnail,
 						link: "https://assetstore.unity.com/packages/tools/gui/customizable-levelling-system-v2-120348"
 					},
-				].map((item) => (
+				].map((item, index) => (
 					<Card
+						key={`projectCard-${index}`}
 						title={item.title}
 						platform={item.platform}
 						engine={item.engine}
