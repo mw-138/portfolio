@@ -78,7 +78,9 @@ export default function ProjectCard(props) {
         <h2 className={classes.title}>{props.title}</h2>
         <div className={classes.btnContainer}>
           {props.link && (
-            <div className={classes.btn}>Visit</div>
+            <form action={props.link} target="_blank" rel="noopener noreferrer">
+              <button className={classes.btn} type="submit">Visit</button>
+            </form>
           )}
         </div>
       </div>
