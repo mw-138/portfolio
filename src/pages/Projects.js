@@ -48,6 +48,7 @@ export default function Projects() {
 				description={project.description}
 				link={project.link}
 				screenshots={project.screenshots}
+				videos={project.videos}
 			/>
 		));
 	}
@@ -75,6 +76,7 @@ export default function Projects() {
 							description={project.description}
 							link={project.link}
 							screenshots={project.screenshots}
+							videos={project.videos}
 						/>
 					))
 				) : (
