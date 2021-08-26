@@ -94,6 +94,9 @@ p {
 .mapList {
   padding: 2rem;
 }
+.mapList, #skillList {
+  padding: 1rem;
+}
 
 input[type=text], select, textarea {
   width: 100%;
@@ -153,4 +156,21 @@ input[type=text], select, textarea {
 
 .project-search-input input:focus {
   outline: none;
+}
+
+@media(max-width: 1100px) {
+  #skillBody {
+    display: none;
+  }
+  #skillBody {
+    display: block;
+    width: 100%;
+  }
+  #skillBody::before {
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    text-align: left;
+  }
 }
