@@ -51,22 +51,29 @@ const useStyles = makeStyles({
     },
   },
   btnContainer: {
-    marginRight: "0px",
     marginLeft: "auto",
     display: "flex",
     flexDirection: "row",
     marginRight: "20px",
     cursor: "default",
   },
-  screenshotContainer: {
+  scrollContainer: {
     height: "400px",
-    marginTop: 10,
     display: "flex",
     flexDirection: "row",
     overflow: "auto",
   },
   screenshotImg: {
-    padding: 10,
+    paddingRight: 10,
+    paddingBottom: 10,
+    paddingTop: 10,
+    '&:last-child': {
+      paddingRight: 0
+    },
+    transition: '150ms ease-in-out',
+    '&:hover': {
+      transform: 'scale(0.98)'
+    }
   },
 });
 
@@ -95,9 +102,22 @@ export default function ProjectCard(props) {
           <div>
             <Divider color="black" width="100%" height="2px" />
             <h3>Screenshots</h3>
-            <div className={classes.screenshotContainer}>
-              {props.screenshots.map((img) => (
-                <img className={classes.screenshotImg} src={img} width="auto" height="auto" />
+            <div className={classes.scrollContainer}>
+              {props.screenshots.map((img, index) => (
+                <img key={`projectScreenshot-${index}`} className={classes.screenshotImg} src={img} width="auto" height="auto" alt="" />
+              ))}
+            </div>
+          </div>
+        )}
+        {props.videos && props.videos.length > 0 && (
+          <div>
+            <Divider color="black" width="100%" height="2px" />
+            <h3>Videos</h3>
+            <div className={classes.scrollContainer}>
+              {props.videos.map((video, index) => (
+                <video key={`projectVideo-${index}`} width="auto" height="auto" controls>
+                  <source src={video} type="video/mp4" />
+                </video>
               ))}
             </div>
           </div>
